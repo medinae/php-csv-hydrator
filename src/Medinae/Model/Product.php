@@ -33,7 +33,7 @@ class Product
      * @param string $description
      * @param Money  $price
      */
-    public function __construct($title, $description, Money $price)
+    public function __construct($title, $description, Money $price = null)
     {
         $this->title = $title;
         $this->description = $description;
@@ -65,6 +65,6 @@ class Product
             return 'N\A';
         }
 
-        return round($this->price->getAmount(), 2);
+        return round($this->price->getAmount() / 100, 2);
     }
 }

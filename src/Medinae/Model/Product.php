@@ -2,6 +2,8 @@
 
 namespace Medinae\Model;
 
+use Money\Money;
+
 /**
  * Product Model class
  *
@@ -20,9 +22,7 @@ class Product
     protected $description;
 
     /**
-     * @var float
-     *
-     * @TODO: use "Money" value object
+     * @var Money
      */
     protected $price;
 
@@ -31,9 +31,9 @@ class Product
      *
      * @param string $title
      * @param string $description
-     * @param int    $price
+     * @param Money  $price
      */
-    public function __construct($title, $description, $price)
+    public function __construct($title, $description, Money $price)
     {
         $this->title = $title;
         $this->description = $description;
@@ -49,27 +49,11 @@ class Product
     }
 
     /**
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
      * @return string
      */
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * @param string $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
     }
 
     /**
@@ -81,14 +65,6 @@ class Product
             return 'N\A';
         }
 
-        return round($this->price, 2);
-    }
-
-    /**
-     * @param float $price
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
+        return round($this->price->getAmount(), 2);
     }
 }

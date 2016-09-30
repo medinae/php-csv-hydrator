@@ -18,7 +18,7 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      * @dataProvider products
      *
      * @param Product $product
-     * @param float     $expectedPrice
+     * @param float   $expectedPrice
      */
     public function it_gets_price(Product $product, $expectedPrice)
     {

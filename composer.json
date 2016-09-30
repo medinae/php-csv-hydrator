@@ -1,0 +1,30 @@
+{
+  "name": "medinae/php-csv-hydrator",
+  "description": "Simple CSV hydrator.",
+  "autoload": {
+    "psr-4": {
+      "": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\": "test"
+    }
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "AbdElKader Bouadjadja",
+      "email": "ak.bouadjadja@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "^3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*"
+  }
+}

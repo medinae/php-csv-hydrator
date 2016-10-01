@@ -42,6 +42,8 @@ class JSONProductLoader implements ProductLoaderInterface
     }
 
     /**
+     * Create Product object
+     *
      * @param string     $title
      * @param string     $description
      * @param Money|null $price

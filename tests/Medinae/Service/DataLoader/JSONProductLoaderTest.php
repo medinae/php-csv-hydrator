@@ -34,7 +34,7 @@ class JSONProductLoaderTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_load_valid_products()
+    public function it_loads_valid_products()
     {
         $jsonProducts = <<<BLOC
 [
@@ -91,7 +91,7 @@ BLOC;
      * @expectedException \Exception
      * @expectedExceptionMessage Missing keys : check "title", "description" and "price"
      */
-    public function it_handles_no_missing_keys_exception()
+    public function it_handles_missing_keys_exception()
     {
         $jsonProducts = <<<BLOC
 [

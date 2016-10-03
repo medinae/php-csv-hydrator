@@ -7,7 +7,9 @@ use Symfony\Component\Console\Application;
 use Medinae\Command\CSVHydratorCommand;
 
 $application = new Application();
-$hydrateCsvCmd = new CSVHydratorCommand();
+
+$loader = new \Medinae\Service\DataLoader\JSONProductLoader();
+$hydrateCsvCmd = new CSVHydratorCommand($loader);
 
 $application->add($hydrateCsvCmd);
 $application->setDefaultCommand($hydrateCsvCmd->getName());

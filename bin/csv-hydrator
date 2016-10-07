@@ -9,7 +9,9 @@ use Medinae\Command\CSVHydratorCommand;
 $application = new Application();
 
 $loader = new \Medinae\Service\DataLoader\JSONProductLoader();
-$hydrateCsvCmd = new CSVHydratorCommand($loader);
+$writer = new \Medinae\Service\Writer\CsvWriter();
+
+$hydrateCsvCmd = new CSVHydratorCommand($loader, $writer);
 
 $application->add($hydrateCsvCmd);
 $application->setDefaultCommand($hydrateCsvCmd->getName());

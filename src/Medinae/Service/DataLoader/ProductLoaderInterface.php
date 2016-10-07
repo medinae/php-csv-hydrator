@@ -2,7 +2,7 @@
 
 namespace Medinae\Service\DataLoader;
 
-use Medinae\Model\Product;
+use Medinae\Model\Writable;
 
 /**
  * Interface ProductLoaderInterface - All Product loader class have to implement it.
@@ -14,7 +14,7 @@ interface ProductLoaderInterface
     /**
      * @param string $jsonData
      *
-     * @return Product[]
+     * @return Writable
      */
     public function load($jsonData);
 }

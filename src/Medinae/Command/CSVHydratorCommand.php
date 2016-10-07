@@ -19,9 +19,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  */
 class CSVHydratorCommand extends Command
 {
-    const DEFAULT_FILE_TO_LOAD_PATH = 'fixtures/products.json';
-    const DEFAULT_FILE_TO_CREATE_NAME = '';
-
     /**
      * @var ProductLoaderInterface
      */

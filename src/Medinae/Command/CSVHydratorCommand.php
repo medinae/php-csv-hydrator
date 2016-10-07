@@ -70,7 +70,7 @@ class CSVHydratorCommand extends Command
     {
         $products = null;
 
-        $jsonData = file_get_contents($input->getArgument('input'));
+        $jsonData = file_get_contents($input->getOption('input'));
 
         $io = new SymfonyStyle($input, $output);
         $io->title('CSV Hydrator Command');
@@ -90,7 +90,7 @@ class CSVHydratorCommand extends Command
         }
 
         try {
-            $this->writer->write($products, $input->getArgument('output'));
+            $this->writer->write($products, $input->getOption('output'));
         } catch (\Exception $exception){
             $io->error('An error occurred when creating and writing into CSV file... '.$exception->getMessage());
 

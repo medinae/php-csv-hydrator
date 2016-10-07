@@ -54,23 +54,8 @@ class CSVHydratorCommand extends Command
         $this
             ->setName('csv-hydrator')
             ->setDescription('Create and hydrate a .csv file with given products data')
-            ->setDefinition(
-                new InputDefinition(array(
-                    new InputOption(
-                        'input', 'i',
-                        InputOption::VALUE_OPTIONAL,
-                        'Product file to parse',
-                        'fixtures/products.json'
-                    ),
-                    new InputOption(
-                        'output',
-                        'o',
-                        InputOption::VALUE_OPTIONAL,
-                        '.csv output file name',
-                        'products.csv'
-                    ),
-                ))
-            );
+            ->addOption('input', 'i', InputOption::VALUE_OPTIONAL, 'Product file to parse', 'fixtures/products.json')
+            ->addOption('output', 'o', InputOption::VALUE_OPTIONAL, '.csv output file name', 'products.csv');
     }
 
     /**

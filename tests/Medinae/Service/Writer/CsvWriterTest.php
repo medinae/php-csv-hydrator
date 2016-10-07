@@ -46,6 +46,42 @@ class CsvWriterTest extends \PHPUnit_Framework_TestCase
         $products->addProduct(new Product('Blackberry 10', 'Really ? It exists ?'));
 
         $this->writer->write($products, 'test');
+
+        $this->assertTrue(file_exists('test.csv'));
+
+        $csv = fopen('test.csv', 'r');
+        $header = fgetcsv($csv);
+
+        $this->assertEquals('title', $header[0]);
+        $this->assertEquals('description', $header[1]);
+        $this->assertEquals('currency', $header[3]);
+
+        $row1 = fgetcsv($csv);
+
+        $this->assertEquals('Iphone 5', $row1[0]);
+        $this->assertEquals('N\A', $row1[3]);
+
+        $row2 = fgetcsv($csv);
+
+        $this->assertEquals('Another phone', $row2[1]);
+
+        fclose($csv);
+
+        unlink('test.csv');
     }
 
+    /**
+     * @test
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage "fileName" argument have to be a string
+     */
+    public function it_throws_an_exception_when_file_name_arg_is_not_a_string()
+    {
+        $products = new Products();
+
+        $products->addProduct(new Product('Battery Energizer', 'Good product'));
+        $products->addProduct(new Product('Battery Alcaline', 'Best product'));
+
+        $this->writer->write($products, 2);
+    }
 }

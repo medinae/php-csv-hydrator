@@ -21,6 +21,10 @@ class CsvWriter implements WriterInterface
      */
     public function write(Writable $writable, $fileName)
     {
+        if (!is_string($fileName)) {
+            throw new \InvalidArgumentException('"fileName" argument have to be a string');
+        }
+
         if (!(substr($fileName, -1) == '.csv')) {
             $fileName .= '.csv';
         }

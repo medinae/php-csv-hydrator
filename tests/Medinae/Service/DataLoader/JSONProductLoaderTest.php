@@ -61,8 +61,6 @@ class JSONProductLoaderTest extends \PHPUnit_Framework_TestCase
   }
 ]
 BLOC;
-
-        /** @var Product[] $products */
         $products = $this->loader->load($jsonProducts);
 
         $this->assertCount(3, $products);
@@ -71,9 +69,9 @@ BLOC;
             $this->assertInstanceOf(Product::class, $product);
         }
 
-        $this->assertEquals('N\A', $products[0]->getPrice());
-        $this->assertEquals("Bata shoes", $products[1]->getTitle());
-        $this->assertEquals(33.44, $products[2]->getPrice());
+        $this->assertEquals('N\A', $products->getValue(0)->getPrice());
+        $this->assertEquals("Bata shoes", $products->getValue(1)->getTitle());
+        $this->assertEquals(33.44, $products->getValue(2)->getPrice());
     }
 
     /**

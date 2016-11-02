@@ -67,4 +67,13 @@ class Product
 
         return round($this->price->getAmount() / 100, 2);
     }
+
+    public function getCurrency()
+    {
+        if (null === $this->price) {
+            return 'N\A';
+        }
+
+        return $this->price->getCurrency();
+    }
 }

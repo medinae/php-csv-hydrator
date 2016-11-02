@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Adidas shoes",
+    "description": "Some gems have hidden qualities beyond their luster, beyond their shine...",
+    "price": null
+  },
+  {
+    "title": "Bata shoes",
+    "description": "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite",
+    "price": {
+      "amount": 35044,
+      "currency": "USD"
+    }
+  },
+  {
+    "title": "Vans shoes",
+    "description": "Some gems have hidden qualities.",
+    "price": {
+      "amount": 3344,
+      "currency": "USD"
+    }
+  },
+  {
+    "title": "Nike shoes",
+    "description": "Some gems have hidden qualities.",
+    "price": {
+      "amount": 33442,
+      "currency": "AED"
+    }
+  },
+  {
+    "title": "Football short",
+    "description": "Some gems have hidden qualities.",
+    "price": {
+      "amount": 6777,
+      "currency": "EUR"
+    }
+  },
+  {
+    "title": "Apple Mac Book Pro",
+    "description": "Some gems have hidden qualities beyond their luster, beyond their shine...Let's code.",
+    "price": null
+  }
+]

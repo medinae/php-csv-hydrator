@@ -2,6 +2,7 @@
 
 namespace Medinae\Service\DataLoader;
 
+use Medinae\Model\Products;
 use Medinae\Service\Validator\ValidationHelper;
 use Money\Currency;
 use Money\Money;
@@ -19,7 +20,7 @@ class JSONProductLoader implements ProductLoaderInterface
      */
     public function load($jsonData)
     {
-        $products = [];
+        $products = new Products();
         $arrayData = json_decode($jsonData, true);
 
         if (!isset($arrayData)) {
@@ -31,11 +32,11 @@ class JSONProductLoader implements ProductLoaderInterface
                 throw new \Exception('Missing keys : check "title", "description" and "price"');
             }
 
-            $products[] = $this->createProduct(
+            $products->addProduct($this->createProduct(
                 $productData['title'],
                 $productData['description'],
                 $productData['price']
-            );
+            ));
         }
 
         return $products;
